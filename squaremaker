@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 
-# $Header: squaremaker,v 4.0 1997/04/25 $
+# $Header: squaremaker,v 4.1 1997/06/19 $
 # 1997 Fabrizio Pivari (Pivari@geocities.com)
 # "Simple Magic Square checker and gif maker" script
 
@@ -13,7 +13,7 @@ $square="";
 $opt_conf="./Square.cnf";
 
 @elem=("data","html","SQUAREfile","LINEfile","separator","skipblank",
-       "table","gif","check");
+       "table","gif","check","transparent","rbg","gbg","bng","rfg","bfg","gfg");
 
 %option=(
       data => './Square.dat',
@@ -24,7 +24,14 @@ $opt_conf="./Square.cnf";
       skipblank => 'yes',
       table => 'yes',
       gif => 'yes',
-      check => 'yes');
+      check => 'yes',
+      transparent => 'yes',
+      rbg => '255',
+      gbg => '255',
+      bbg => '255',
+      rfg => '0',
+      bfg => '0',
+      gfg => '0');
 
 &GetOptions("conf=s","help") || &printusage ;
 
@@ -59,7 +66,6 @@ else
    }
 
 @all = split(/$separ/,$square);
-print "@all";
 $ORD = sqrt($#all+1);
 if ($ORD =~ /\d+\.\d+/)
    {
@@ -139,23 +145,26 @@ if ($option{'check'} eq "yes")
                $k=1;
                $MIDDLE = ($CELLGRIDSIZE+1)/2;
                $im=new GD::Image($GRIDSIZE,$GRIDSIZE);
-               $white=$im->colorAllocate(255,255,255);
-               $black=$im->colorAllocate(0,0,0);
+               $bg=$im->colorAllocate($option{'rbg'},$option{'gbg'},$option{'bbg'});
+               $fg=$im->colorAllocate($option{'rfg'},$option{'gfg'},$option{'bfg'});
 
                # GRID
-               $im->transparent($white);
-               $im->filledRectangle(0,0,255,255,$white);
-               $im->filledRectangle(0,0,4,$GRIDSIZE,$black);
-               $im->filledRectangle(0,0,$GRIDSIZE,4,$black);
+               if ($option{'transparent'} eq "yes")
+                  {
+                  $im->transparent($bg);
+                  }
+               $im->filledRectangle(0,0,255,255,$bg);
+               $im->filledRectangle(0,0,4,$GRIDSIZE,$fg);
+               $im->filledRectangle(0,0,$GRIDSIZE,4,$fg);
                $tmp = $GRIDSIZE -5;
-               $im->filledRectangle($tmp,0,$GRIDSIZE,$GRIDSIZE,$black);
-               $im->filledRectangle(0,$tmp,$GRIDSIZE,$GRIDSIZE,$black);
+               $im->filledRectangle($tmp,0,$GRIDSIZE,$GRIDSIZE,$fg);
+               $im->filledRectangle(0,$tmp,$GRIDSIZE,$GRIDSIZE,$fg);
                $xy = 4 + $CELLGRIDSIZE;
                $xy2 = $xy +2;
                for (1..$ORD-1)
                   {
-                  $im->filledRectangle($xy,0,$xy2,$GRIDSIZE,$black);
-                  $im->filledRectangle(0,$xy,$GRIDSIZE,$xy2,$black);
+                  $im->filledRectangle($xy,0,$xy2,$GRIDSIZE,$fg);
+                  $im->filledRectangle(0,$xy,$GRIDSIZE,$xy2,$fg);
                   $xy = $xy2 + $CELLGRIDSIZE;
                   $xy2 = $xy + 2;
                   }
@@ -172,14 +181,14 @@ if ($option{'check'} eq "yes")
                            {
                            $x1=$i*$CELLGRIDSIZE+$MIDDLE+4+$i*2;
                            $y1=$j*$CELLGRIDSIZE+$MIDDLE+4+$j*2;
-                           $im->arc($x1,$y1,2,2,0,360,$black);
+                           $im->arc($x1,$y1,2,2,0,360,$fg);
                            $k++;
                            goto ANOTHER;
                            }
                         $x2=$i*$CELLGRIDSIZE+$MIDDLE+4+$i*2;
                         $y2=$j*$CELLGRIDSIZE+$MIDDLE+4+$j*2;
-                        $im->line($x1,$y1,$x2,$y2,$black);
-                        $im->arc($x2,$y2,2,2,0,360,$black);
+                        $im->line($x1,$y1,$x2,$y2,$fg);
+                        $im->arc($x2,$y2,2,2,0,360,$fg);
 
                         $x1=$x2;
                         $y1=$y2;
@@ -214,23 +223,23 @@ if ($option{'check'} eq "yes")
 NEXT: if ($option{'gif'} eq "yes")
    {
    $im=new GD::Image($GRIDSIZE,$GRIDSIZE);
-   $white=$im->colorAllocate(255,255,255);
-   $black=$im->colorAllocate(0,0,0);
+   $bg=$im->colorAllocate($option{'rbg'},$option{'gbg'},$option{'bbg'});
+   $fg=$im->colorAllocate($option{'rfg'},$option{'gfg'},$option{'bfg'});
 
    # GRID
-   $im->transparent($white);
-   $im->filledRectangle(0,0,255,255,$white);
-   $im->filledRectangle(0,0,4,$GRIDSIZE,$black);
-   $im->filledRectangle(0,0,$GRIDSIZE,4,$black);
+   if ($option{'transparent'} eq "yes") {$im->transparent($bg);}
+   $im->filledRectangle(0,0,255,255,$bg);
+   $im->filledRectangle(0,0,4,$GRIDSIZE,$fg);
+   $im->filledRectangle(0,0,$GRIDSIZE,4,$fg);
    $tmp = $GRIDSIZE -5;
-   $im->filledRectangle($tmp,0,$GRIDSIZE,$GRIDSIZE,$black);
-   $im->filledRectangle(0,$tmp,$GRIDSIZE,$GRIDSIZE,$black);
+   $im->filledRectangle($tmp,0,$GRIDSIZE,$GRIDSIZE,$fg);
+   $im->filledRectangle(0,$tmp,$GRIDSIZE,$GRIDSIZE,$fg);
    $xy = 4 + $CELLGRIDSIZE;
    $xy2 = $xy +2;
    for (1..$ORD-1)
       {
-      $im->filledRectangle($xy,0,$xy2,$GRIDSIZE,$black);
-      $im->filledRectangle(0,$xy,$GRIDSIZE,$xy2,$black);
+      $im->filledRectangle($xy,0,$xy2,$GRIDSIZE,$fg);
+      $im->filledRectangle(0,$xy,$GRIDSIZE,$xy2,$fg);
       $xy = $xy2 + $CELLGRIDSIZE;
       $xy2 = $xy + 2;
       }
@@ -252,7 +261,7 @@ NEXT: if ($option{'gif'} eq "yes")
          if ($elem[$j][$i] < 10 && $elem[$j][$i] >= 0) { $x1 = $x1 + 4; }
          # to hit the centre with numbers > 99
          if ($elem[$j][$i] > 99) { $x1 = $x1 - 4; }
-         $im->string(gdLargeFont,$x1,$y1,"$elem[$j][$i]",$black);
+         $im->string(gdLargeFont,$x1,$y1,"$elem[$j][$i]",$fg);
          $x1 = $x1 + $CELLGRIDSIZE + 2;
          if ($elem[$j][$i] < -9) { $x1 = $x1 + 3; }
          if ($elem[$j][$i] < 0 && $elem[$j][$i] > -10) { $x1 = $x1 + 2; }

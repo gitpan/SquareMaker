@@ -15,3 +15,11 @@ skipblank: yes
 table: yes
 gif: yes
 check: yes
+# colour
+transparent: no
+rbg: 255
+gbg: 255
+bbg: 255
+rfg: 0
+gfg: 0
+bfg: 0

@@ -27,3 +27,6 @@ Add examples on use of separator and skip blanks
 Version 4.0
 Now you can use squaremaker script without HTML form and cgi-bin using
 Square.dat Square.cnf configuration files
+
+Version 4.1
+Add Colours: Background Colour, Foreground Colour, Transparent Background

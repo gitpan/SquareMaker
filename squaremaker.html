@@ -11,10 +11,10 @@ Simple Magic Square checker and gif maker
 <BODY>
 <H1>Simple Magic Square checker and gif maker</H1>
 <H2>by <A HREF="mailto:Pivari@geocities.com">Fabrizio Pivari</A></H2>
-<H3>version 4.0 1997/04/25</H3>
+<H3>version 4.1 1997/06/19</H3>
 <P>
 <FORM METHOD="post" ACTION="http://www.agip.it/cgi-bin/SQUARE.cgi">
-Magic square elements (each <A HREF="./separator_skip.html">separated</A>
+Magic square elements (each <A HREF="separator_skip.html">separated</A>
 by <input name="separator" value="" size=1> Default is blank):<P>
 <TEXTAREA NAME="square" ROWS=9 COLS=27>
 8 1 6
@@ -22,10 +22,33 @@ by <input name="separator" value="" size=1> Default is blank):<P>
 4 9 2
 </TEXTAREA><P>
 (Note: you can use letter and negative numbers.)<P>
+<H3><IMG SRC="new.gif" WIDTH=28 HEIGHT=11>Colours<IMG SRC="new.gif" WIDTH=28 HEIGHT=11></H3>
+<TABLE BORDER=0>
+<TR>
+<TD><INPUT TYPE="checkbox" NAME="transparent" value="yes" CHECKED></TD>
+<TD>Transparent Background</TD>
+</TR>
+<TR>
+<TD>
+<input name="rbg" value="255" size=3>
+<input name="gbg" value="255" size=3>
+<input name="bbg" value="255" size=3>
+</TD>
+<TD>Background Colour in RGB mode</TD>
+</TR>
+<TD>
+<input name="rfg" value="0" size=3>
+<input name="gfg" value="0" size=3>
+<input name="bfg" value="0" size=3>
+</TD>
+<TD>Foreground Colour in RGB mode</TD>
+</TR>
+</TABLE>
+<H3>Funcitons</H3>
 <TABLE BORDER=0>
 <TR>
 <TD><INPUT TYPE="checkbox" NAME="skipblank" value="skipblank"></TD>
-<TD><A HREF="./separator_skip.html">Skip blanks</A><IMG SRC="./new.gif" WIDTH=28 HEIGHT=11></TD>
+<TD><A HREF="separator_skip.html">Skip blanks</A></TD>
 </TR>
 <TR>
 <TD><INPUT TYPE="checkbox" NAME="gif" value="gif" CHECKED></TD>
@@ -38,23 +61,33 @@ by <input name="separator" value="" size=1> Default is blank):<P>
 <TR>
 <TD><INPUT TYPE="checkbox" NAME="check" value="check"></TD>
 <TD>Magic Square check (Semimagic Square, Magic Square, Panmagic Square with
-Magic Costant = n(n<sup>2</sup>+1)/2 or different)</TD>
+Magic Constant = n(n<sup>2</sup>+1)/2 or different)</TD>
 </TR>
 </TABLE><p>
 Press <INPUT TYPE="submit" VALUE="here"> to submit your query.
 </FORM>
 NOTE! If the gif isn't correct you have to repost the form data with the
 button Reload.<P>
-<IMG SRC="./new.gif" WIDTH=28 HEIGHT=11>The option Magic Square check for normal Magic Square
-(1,2,...N) now generate the gif of Magic Line (a line that connects every numer
-form 1 to N)<IMG SRC="./new.gif" WIDTH=28 HEIGHT=11><P>
+The option Magic Square check for normal Magic Square (1,2,...N) now generate
+the gif of Magic Line (a line that connects every number form 1 to N)<P>
 After saving your Magic Square you can use the gif to
-<A HREF="./VRML.html">create a magic square Texture Map in VRML</A>.<P>
-<IMG SRC="./new.gif" WIDTH=28 HEIGHT=11><A HREF="./examples.html"> Examples made
-with this tool</A><IMG SRC="./new.gif" WIDTH=28 HEIGHT=11><P>
-<A HREF="./SquareMaker.tar.gz"> Source Code</A><P>
-<IMG SRC="./new.gif" WIDTH=28 HEIGHT=11>From version 4.0 in the source code you
+<A HREF="VRML.html">create a magic square Texture Map in VRML</A>.<P>
+<A HREF="examples.html"> Examples made with this tool</A><P>
+<A HREF="SquareMaker.tar.gz"> Source Code</A><P>
+<IMG SRC="new.gif" WIDTH=28 HEIGHT=11>You can also find the source code at
+CPAN authors/Fabrizio_Pivari/<P>
+<IMG SRC="new.gif" WIDTH=28 HEIGHT=11>From version 4.0 in the source code you
 can find a PERL program with the same features of this CGI-BIN script
-<IMG SRC="./new.gif" WIDTH=28 HEIGHT=11><P>
+<IMG SRC="new.gif" WIDTH=28 HEIGHT=11><P>
+<H2><IMG SRC="new.gif" WIDTH=28 HEIGHT=11>Links around the world to this page</H2>
+<li><A HREF="http://www.pse.che.tohoku.ac.jp/~msuzuki/MagicSquare.html">
+Magic Squares</A> by <A HREF="mailto:msuzuki@pse.che.tohoku.ac.jp">Mutsumi
+Suzuki</A></li>
+<li><A HREF="http://forum.swarthmore.edu/alejandre/magic.square.html">
+Magic Squares</A> by <A HREF="mailto:salejan@empirenet.com">Suzanne
+Alejandre</A></li>
+<li><A HREF="http://forum.swarthmore.edu/~steve/steve/matharith.html">
+Math Forum Internet Resource Collection</A> by
+<A HREF="mailto:webmaster@forum.swarthmore.edu">Web Master</A></li>
 </BODY>
 </HTML>
