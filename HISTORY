@@ -1,0 +1,29 @@
+Version 1.0
+First public realese with these fields:
+Magic square elements
+Magic Square gif
+Magic Square table
+
+Version 2.0
+Correct "Table" bug (Thanks Grogono, Alan W)
+Added Magic Square check
+(check of semimagic square, magic square, panmagic square with magic costant
+n(n^2 +1)/2 or different)
+Added Examples made with this tool and Source Code
+
+Version 3.0
+Error Test: The number of elements in every line or column is not the same
+Deleted the possibility of make an empty grid
+Magic Square check: added the production of Magic Line for normal Magic Square
+(1,2,...,N) (a line that connects every number from 1 to N)
+Negative numbers hit the centre in the gif grid
+New Examples
+
+Version 3.3
+Add the field separator (default is a blank)
+Add Skip blanks
+Add examples on use of separator and skip blanks
+
+Version 4.0
+Now you can use squaremaker script without HTML form and cgi-bin using
+Square.dat Square.cnf configuration files

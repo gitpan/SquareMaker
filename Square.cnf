@@ -1,0 +1,17 @@
+#
+# Configure the value of the variables
+#
+# The file where you can write your Numbers or Letters or blank
+data: ./Square.dat
+# HTML output file
+html: ./Square.html
+# Gif of your Magic Square generated if Gif option is yes
+SQUAREfile: ./Square.gif
+# Gif generated if Check option is yes and your
+LINEfile: ./Line.gif
+# nothing or blank are the same separator
+separator:
+skipblank: yes
+table: yes
+gif: yes
+check: yes

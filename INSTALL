@@ -1,0 +1,18 @@
+This simple tool is compose of 3 files
+
+squaremaker		the perl script
+Square.cnf		the configuration file
+Square.dat		the data file
+
+
+1) Check if you have PERL. You can find it at http://www.perl.com
+   If think you need PERL 5.XXX
+
+2) Control the path of your perl installation. The default in squaremaker is
+   #!/usr/local/bin/perl
+
+3) Check if you have GD.pm (A graphics library for fast GIF creation in perl).
+   You can find it at http://www-genome.wi.mit.edu/ftp/pub/software/WWW/GD.html
+
+Now you can use squaremaker. Change the configuration parameters in ./Square.cnf
+(default) and write your Magic Square in ./Square.dat (default)
