@@ -29,5 +29,13 @@ separator_skip.html	a file to explain the field separator and the checkbox
    [Usually /usr/local/lib/perl5]
    You can find the last version of cgi-lib.pl and documentation at
    http://www.bio.cam.ac.uk/cgi-lib/
+   If you have CGI.pm installed you can you it. You have to comment in SQUARE.cgi
+   the line
+   require "cgi-lib.pl";
+   and decomment the line
+   #use CGI qw(:cgi-lib);
+   You can find the last version of CGI.pm and documentation at
+   http://www-genome.wi.mit.edu/ftp/pub/software/WWW/
+
 
 I don't test this simple tool with PERL version 4. I hope it works.

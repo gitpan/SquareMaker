@@ -11,7 +11,7 @@ Simple Magic Square checker and gif maker
 <BODY>
 <H1>Simple Magic Square checker and gif maker</H1>
 <H2>by <A HREF="mailto:Pivari@geocities.com">Fabrizio Pivari</A></H2>
-<H3>version 4.1 1997/06/19</H3>
+<H3>version 4.2 1997/06/19</H3>
 <P>
 <FORM METHOD="post" ACTION="http://www.agip.it/cgi-bin/SQUARE.cgi">
 Magic square elements (each <A HREF="separator_skip.html">separated</A>
@@ -22,6 +22,26 @@ by <input name="separator" value="" size=1> Default is blank):<P>
 4 9 2
 </TEXTAREA><P>
 (Note: you can use letter and negative numbers.)<P>
+<H3>Functions</H3>
+<TABLE BORDER=0>
+<TR>
+<TD><INPUT TYPE="checkbox" NAME="skipblank" value="skipblank"></TD>
+<TD><A HREF="separator_skip.html">Skip blanks</A></TD>
+</TR>
+<TR>
+<TD><INPUT TYPE="checkbox" NAME="gif" value="gif" CHECKED></TD>
+<TD>Magic Square gif</TD>
+</TR>
+<TR>
+<TD><INPUT TYPE="checkbox" NAME="table" value="table"></TD>
+<TD>Magic Square table</TD>
+</TR>
+<TR>
+<TD><INPUT TYPE="checkbox" NAME="check" value="check"></TD>
+<TD>Magic Square check (Semimagic Square, Magic Square, Panmagic Square with
+Magic Constant = n(n<sup>2</sup>+1)/2 or different)</TD>
+</TR>
+</TABLE><p>
 <H3><IMG SRC="new.gif" WIDTH=28 HEIGHT=11>Colours<IMG SRC="new.gif" WIDTH=28 HEIGHT=11></H3>
 <TABLE BORDER=0>
 <TR>
@@ -44,26 +64,7 @@ by <input name="separator" value="" size=1> Default is blank):<P>
 <TD>Foreground Colour in RGB mode</TD>
 </TR>
 </TABLE>
-<H3>Funcitons</H3>
-<TABLE BORDER=0>
-<TR>
-<TD><INPUT TYPE="checkbox" NAME="skipblank" value="skipblank"></TD>
-<TD><A HREF="separator_skip.html">Skip blanks</A></TD>
-</TR>
-<TR>
-<TD><INPUT TYPE="checkbox" NAME="gif" value="gif" CHECKED></TD>
-<TD>Magic Square gif</TD>
-</TR>
-<TR>
-<TD><INPUT TYPE="checkbox" NAME="table" value="table"></TD>
-<TD>Magic Square table</TD>
-</TR>
-<TR>
-<TD><INPUT TYPE="checkbox" NAME="check" value="check"></TD>
-<TD>Magic Square check (Semimagic Square, Magic Square, Panmagic Square with
-Magic Constant = n(n<sup>2</sup>+1)/2 or different)</TD>
-</TR>
-</TABLE><p>
+<A HREF="http://www.yvg.com/twrs/RGBConverter.html">Utilty from Palette to RGB</A><P>
 Press <INPUT TYPE="submit" VALUE="here"> to submit your query.
 </FORM>
 NOTE! If the gif isn't correct you have to repost the form data with the
@@ -80,14 +81,19 @@ CPAN authors/Fabrizio_Pivari/<P>
 can find a PERL program with the same features of this CGI-BIN script
 <IMG SRC="new.gif" WIDTH=28 HEIGHT=11><P>
 <H2><IMG SRC="new.gif" WIDTH=28 HEIGHT=11>Links around the world to this page</H2>
-<li><A HREF="http://www.pse.che.tohoku.ac.jp/~msuzuki/MagicSquare.html">
+<UL>
+<LI><A HREF="http://www.yahoo.com/Science/Mathematics/Games/Combinatorics">
+Yahoo Science:Mathematics:Games:Combinatorics</A>
+<IMG SRC="new.gif" WIDTH=28 HEIGHT=11></LI>
+<LI><A HREF="http://www.pse.che.tohoku.ac.jp/~msuzuki/MagicSquare.html">
 Magic Squares</A> by <A HREF="mailto:msuzuki@pse.che.tohoku.ac.jp">Mutsumi
-Suzuki</A></li>
-<li><A HREF="http://forum.swarthmore.edu/alejandre/magic.square.html">
+Suzuki</A></LI>
+<LI><A HREF="http://forum.swarthmore.edu/alejandre/magic.square.html">
 Magic Squares</A> by <A HREF="mailto:salejan@empirenet.com">Suzanne
-Alejandre</A></li>
-<li><A HREF="http://forum.swarthmore.edu/~steve/steve/matharith.html">
+Alejandre</A></LI>
+<LI><A HREF="http://forum.swarthmore.edu/~steve/steve/matharith.html">
 Math Forum Internet Resource Collection</A> by
-<A HREF="mailto:webmaster@forum.swarthmore.edu">Web Master</A></li>
+<A HREF="mailto:webmaster@forum.swarthmore.edu">Web Master</A></LI>
+</UL>
 </BODY>
 </HTML>

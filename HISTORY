@@ -30,3 +30,7 @@ Square.dat Square.cnf configuration files
 
 Version 4.1
 Add Colours: Background Colour, Foreground Colour, Transparent Background
+
+Version 4.2
+Add new examples on Magic Square and Numerology
+Add support for CGI.pm

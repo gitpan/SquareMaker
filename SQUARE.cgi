@@ -1,10 +1,12 @@
 #!/usr/local/bin/perl -Tw
 
-# $Header: SQUARE.cgi,v 4.1 1997/06/19 $
+# $Header: SQUARE.cgi,v 4.2 1997/06/19 $
 # 1997 Fabrizio Pivari (Pivari@geocities.com)
 # "Simple Magic Square checker and gif maker" script
 
 require "cgi-lib.pl";
+# with CGI.pm you can use
+#use CGI qw(:cgi-lib);
 use GD;
 
 MAIN:
@@ -278,7 +280,7 @@ if ($table eq "table")
    print "</table><p>\n";
    }
 
-print qq!Generated with SquareMaker-4.1 by <a href="mailto:Pivari\@geocities.com">Fabrizio Pivari</a>\n!;
+print qq!Generated with SquareMaker-4.2 written by <a href="mailto:Pivari\@geocities.com">Fabrizio Pivari</a>\n!;
 
 # Close the document cleanly
    print &HtmlBot;
